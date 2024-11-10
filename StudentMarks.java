@@ -17,6 +17,10 @@ public class StudentMarks
       System.out.println("Give 30 Student Marks");
       
       for (int i = 0; i < StudentCount; i++){
+          while (true){
+        
+        
+          System.out.printf("Student %d Mark: ", i+1);
           
           float temp = scan.nextFloat();
           
@@ -24,17 +28,20 @@ public class StudentMarks
               
               System.out.println("Invalid marks, please reenter");
               continue;
+          } else {
+              marks[i] = temp;
+              break;
           }
           
-          marks[i] = temp;
           
+        }
       }
       
       System.out.println("Student Marks put in:");
       for (int i = 0; i < StudentCount; i++){
-          
+          System.out.printf("Student %d: ", i+1, marks[i]);
           System.out.println(marks[i]);
-          
+         
       }
   }
 }
