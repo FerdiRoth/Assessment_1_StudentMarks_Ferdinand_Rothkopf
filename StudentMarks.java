@@ -73,11 +73,11 @@ public class StudentMarks
       float sumdiff = 0;
       
       for (int i = 0; i < StudentCount; i++){
-          
           sumdiff = sumdiff + (marks[i] - mean) * (marks[i] - mean);
-          sumdiff = sumdiff / StudentCount;
-          sumdiff = (float) Math.sqrt(sumdiff);
       }
+      
+      sumdiff = sumdiff / StudentCount;
+      sumdiff = (float) Math.sqrt(sumdiff);
       System.out.printf("Standard deviation value %.1f\n", sumdiff);
     }
 }
