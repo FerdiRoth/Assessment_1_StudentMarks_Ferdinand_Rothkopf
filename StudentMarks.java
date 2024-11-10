@@ -10,9 +10,23 @@ public class StudentMarks
 {
   public static void main(String[] args){
       
-      int StudentCount = 30;
+      int StudentCount = 5;
       float[] marks = new float[StudentCount];
       Scanner scan = new Scanner(System.in);
       
+      System.out.print("Give 30 Student Marks");
+      
+      for (int i = 0; i < StudentCount; i++){
+          
+          marks[i] = scan.nextFloat();
+          
+      }
+      
+      
+      for (int i = 0; i < StudentCount; i++){
+          
+          System.out.println(marks[i]);
+          
+      }
   }
 }
