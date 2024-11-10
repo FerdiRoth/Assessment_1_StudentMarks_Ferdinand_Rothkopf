@@ -35,7 +35,7 @@ public class StudentMarks
         }
       }
       // Stored marks array output
-      System.out.println("Student Marks put in:");
+      System.out.println("\nStudent Marks put in:");
       for (int i = 0; i < StudentCount; i++){
           System.out.printf("Student %d: ", i+1, marks[i]);
           System.out.println(marks[i]);
@@ -55,7 +55,29 @@ public class StudentMarks
           }
       }
       //Output highest and lowest Mark
-      System.out.printf("Highest mark: %.1f\n", highestMark);
-      System.out.printf("Lowest mark: %.1f\n ", lowestMark);
-  }
+      System.out.printf("\nHighest mark: %.1f\n", highestMark);
+      System.out.printf("Lowest mark: %.1f\n\n", lowestMark);
+      
+      //Compute mean and standard deviation
+      //Compute mean
+      float total = 0;
+      float mean = 0;
+      for (int i = 0; i < StudentCount; i++){
+          total = total + marks[i];
+      }
+      
+      mean = total / StudentCount;
+      System.out.printf("Mean value %.1f\n", mean);
+ 
+      //Compute standard deviation
+      float sumdiff = 0;
+      
+      for (int i = 0; i < StudentCount; i++){
+          
+          sumdiff = sumdiff + (marks[i] - mean) * (marks[i] - mean);
+          sumdiff = sumdiff / StudentCount;
+          sumdiff = (float) Math.sqrt(sumdiff);
+      }
+      System.out.printf("Standard deviation value %.1f\n", sumdiff);
+    }
 }
