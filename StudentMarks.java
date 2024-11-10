@@ -14,15 +14,23 @@ public class StudentMarks
       float[] marks = new float[StudentCount];
       Scanner scan = new Scanner(System.in);
       
-      System.out.print("Give 30 Student Marks");
+      System.out.println("Give 30 Student Marks");
       
       for (int i = 0; i < StudentCount; i++){
           
-          marks[i] = scan.nextFloat();
+          float temp = scan.nextFloat();
+          
+          if (temp < 0 || temp > 30){
+              
+              System.out.println("Invalid marks, please reenter");
+              continue;
+          }
+          
+          marks[i] = temp;
           
       }
       
-      
+      System.out.println("Student Marks put in:");
       for (int i = 0; i < StudentCount; i++){
           
           System.out.println(marks[i]);
