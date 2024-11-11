@@ -12,10 +12,10 @@ public class StudentMarks
       
       int StudentCount = 5;
       float[] marks = new float[StudentCount];
+      Scanner scan = new Scanner(System.in);
       
       // Input student grades
-      Scanner scan = new Scanner(System.in);
-      System.out.println("Give 30 Student Marks");
+      System.out.println("Enter marks for " + StudentCount + " students (0-30):");
       
       for (int i = 0; i < StudentCount; i++){
           // While loop to leave if input is correct
@@ -41,7 +41,7 @@ public class StudentMarks
           System.out.println(marks[i]);
       }
       
-      //Compute highest and lowest marks
+      //Compute highest and lowest, mean and standard deviation
       //Initialising highest and lowest marks with first mark
       float highestMark = marks[0];
       float lowestMark = marks[0];
@@ -63,7 +63,7 @@ public class StudentMarks
       float total = 0;
       float mean = 0;
       for (int i = 0; i < StudentCount; i++){
-          total = total + marks[i];
+          total += marks[i];
       }
       
       mean = total / StudentCount;
@@ -73,11 +73,10 @@ public class StudentMarks
       float sumdiff = 0;
       
       for (int i = 0; i < StudentCount; i++){
-          sumdiff = sumdiff + (marks[i] - mean) * (marks[i] - mean);
+          sumdiff += (marks[i] - mean) * (marks[i] - mean);
       }
       
-      sumdiff = sumdiff / StudentCount;
-      sumdiff = (float) Math.sqrt(sumdiff);
+      sumdiff = (float) Math.sqrt(sumdiff / StudentCount);
       System.out.printf("Standard deviation value %.1f\n", sumdiff);
     }
 }
