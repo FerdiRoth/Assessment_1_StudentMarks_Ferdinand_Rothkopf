@@ -9,8 +9,11 @@ import java.util.Scanner;
 public class StudentMarks
 {
   public static void main(String[] args){
+      //Input assignment Name
+      System.out.print("Enter the assignment name: ");
+      String assignmentName = new Scanner(System.in).nextLine();
       
-      int StudentCount = 5;
+      int StudentCount = 30;
       float[] marks = new float[StudentCount];
       Scanner scan = new Scanner(System.in);
       
@@ -34,8 +37,10 @@ public class StudentMarks
           }
         }
       }
+      //Assignment Name output
+      System.out.println("\nAssignment Name: " + assignmentName);
       // Stored marks array output
-      System.out.println("\nStudent Marks put in:");
+      System.out.println("Student Marks put in:");
       for (int i = 0; i < StudentCount; i++){
           System.out.printf("Student %d: ", i+1, marks[i]);
           System.out.println(marks[i]);
@@ -67,7 +72,7 @@ public class StudentMarks
       }
       
       mean = total / StudentCount;
-      System.out.printf("Mean value %.1f\n", mean);
+      System.out.printf("Mean value %.2f\n", mean);
  
       //Compute standard deviation
       float sumdiff = 0;
@@ -77,6 +82,6 @@ public class StudentMarks
       }
       
       sumdiff = (float) Math.sqrt(sumdiff / StudentCount);
-      System.out.printf("Standard deviation value %.1f\n", sumdiff);
+      System.out.printf("Standard deviation value %.2f\n", sumdiff);
     }
 }
